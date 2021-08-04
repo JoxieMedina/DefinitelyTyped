@@ -68,6 +68,15 @@ declare namespace ShopifyBuy {
             customAttributes?: AttributeInput[],
         ): Promise<Cart>;
 
+        create(opts: {
+                email?: string,
+                lineItems?: LineItem[],
+                shippingAddress?: Address,
+                note?: string,
+                customAttributes?: AttributeInput[],
+            }
+        ): Promise<Cart>;
+
         fetch(id: string): Promise<Cart>;
 
         addLineItems(checkoutId: string | number, lineItems: LineItemToAdd[]): Promise<Cart>;
